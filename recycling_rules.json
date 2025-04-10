@@ -1,20 +1,16 @@
 {
-    "default": {
-      "plastic": "Check the number inside the recycling triangle. Clean plastics like bottles are generally recyclable.",
-      "paper": "Clean paper is recyclable. Food-soiled paper is not.",
-      "metal": "Recyclable if clean. Remove food residues.",
-      "glass": "Usually recyclable. Remove lids.",
-      "cardboard": "Flatten and clean before recycling.",
-      "trash": "This item is not recyclable."
-    },
-    "San Francisco": {
-      "plastic": "All rigid plastics are recyclable curbside.",
-      "trash": "Soft plastics go in the black bin."
-    },
-    "New York": {
-      "plastic": "Only plastics labeled 1, 2, or 5 are recyclable.",
-      "metal": "Metal cans and foil are accepted after rinsing.",
-      "glass": "Glass bottles and jars only. No mirrors or windows."
-    }
+  "default": {
+    "O": "This item is considered organic waste. Dispose in compost or green bin if available.",
+    "R": "This item is recyclable. Please clean and dry before disposal."
+  },
+  "New York": {
+    "O": "Organic waste is accepted in brown bins where composting is available.",
+    "R": "Recyclables must be clean. Place paper, plastic, and metal in the blue bin."
+  },
+  "San Francisco": {
+    "O": "Place organic waste (food, yard scraps) in the green compost bin.",
+    "R": "Place clean recyclables in the blue bin. Do not include plastic bags or film."
   }
+}
+
   

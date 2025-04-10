@@ -12,7 +12,8 @@ st.title("♻️ WasteSnap")
 st.write("Upload an image of your waste item to find out if it's recyclable!")
 
 # Define waste class labels (should match model training order)
-class_labels = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
+#class_labels = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
+class_labels = ['O', 'R']  # 0 = Organic, 1 = Recyclable
 
 # Load regional recycling rules
 @st.cache_data
