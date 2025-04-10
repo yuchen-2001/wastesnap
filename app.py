@@ -35,8 +35,21 @@ output_details = interpreter.get_output_details()
 
 # Prediction function
 def predict_image(image):
-    image = image.resize((150, 150))
-    img_array = np.expand_dims(np.array(image) / 255.0, axis=0).astype(np.float32)
+    image = image.resize((150, 150))  # Or match your model's expected size exactly
+    img_array = np.array(image) / 255.0
+
+    # Ensure shape is [1, height, width, channels]
+    img_array = np.expand_dims(img_array, axis=0).astype(np.float32)
+
+    # Get input tensor details (make sure shape and dtype match)
+    input_shape = input_details[0]['shape']
+    input_dtype = input_details[0]['dtype']
+
+    if img_array.shape != tuple(input_shape):
+        st.error(f"Expected input shape {input_shape}, but got {img_array.shape}")
+        return "Error", 0.0
+    if img_array.dtype != input_dtype:
+        img_array = img_array.astype(input_dtype)
 
     interpreter.set_tensor(input_details[0]['index'], img_array)
     interpreter.invoke()
@@ -45,6 +58,7 @@ def predict_image(image):
     class_idx = np.argmax(output_data)
     confidence = float(output_data[class_idx])
     return class_labels[class_idx], confidence
+
 
 # Get tip for a region + label
 def get_recycling_tip(label, region="default"):
