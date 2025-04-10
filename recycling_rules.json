@@ -5,58 +5,72 @@
   },
   "New York": {
     "R": "Place clean recyclables in the blue bin. Includes bottles, cans, rigid plastics, paper, and cardboard. No plastic bags, films, or styrofoam.",
-    "O": "Place organic waste in the brown bin if participating in NYC’s composting program. Includes food scraps, plant waste, and soiled paper."
+    "O": "Place organic waste in the brown bin if participating in NYC\u2019s composting program. Includes food scraps, plant waste, and soiled paper.",
+    "url": "https://www.nyc.gov/assets/dsny/site/services/recycling"
   },
   "San Francisco": {
     "R": "Use the blue bin for recyclables: clean paper, cardboard, metal cans, glass bottles, and hard plastics. No plastic bags or utensils.",
-    "O": "Place food scraps, napkins, and compostable packaging in the green compost bin. Composting is mandatory in SF."
+    "O": "Place food scraps, napkins, and compostable packaging in the green compost bin. Composting is mandatory in SF.",
+    "url": "https://sfenvironment.org/zero-waste"
   },
   "Los Angeles": {
-    "R": "Recyclables include clean plastic bottles, paper, cardboard, glass, and aluminum cans. Place them loose in the blue bin — no bags.",
-    "O": "Organic waste such as food scraps and yard trimmings go in the green bin. Composting is mandatory under LA's Zero Waste program."
+    "R": "Recyclables include clean plastic bottles, paper, cardboard, glass, and aluminum cans. Place them loose in the blue bin \u2014 no bags.",
+    "O": "Organic waste such as food scraps and yard trimmings go in the green bin. Composting is mandatory under LA's Zero Waste program.",
+    "url": "https://lacitysan.org/san/faces/home/portal/s-lsh-es/s-lsh-es-r/s-lsh-es-r-csr?_adf.ctrl-state=z8iq9jgyf_4&_afrLoop=511074990159187"
   },
   "Chicago": {
-    "R": "Use the blue cart for recyclables: paper, cardboard, glass, metal cans, and plastic bottles #1–5. Do not bag recyclables.",
-    "O": "Composting is not provided citywide. Use private composting services or dispose of food waste in the black trash cart."
+    "R": "Use the blue cart for recyclables: paper, cardboard, glass, metal cans, and plastic bottles #1\u20135. Do not bag recyclables.",
+    "O": "Composting is not provided citywide. Use private composting services or dispose of food waste in the black trash cart.",
+    "url": "https://www.chicago.gov/city/en/depts/streets/supp_info/recycling1.html"
   },
   "Seattle": {
     "R": "Recycle paper, cardboard, bottles, cans, and rigid plastics. No food or liquid. Do not bag recyclables.",
-    "O": "Put food waste and soiled paper in the green compost cart. Composting is mandatory for all residences and businesses."
+    "O": "Put food waste and soiled paper in the green compost cart. Composting is mandatory for all residences and businesses.",
+    "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/recycling"
   },
   "Austin": {
     "R": "Recycle clean paper, cardboard, metal, glass, and hard plastic. No plastic bags or Styrofoam.",
-    "O": "Place food scraps and compostable items in the green organics cart if enrolled. Yard trimmings are accepted."
+    "O": "Place food scraps and compostable items in the green organics cart if enrolled. Yard trimmings are accepted.",
+    "url": "https://www.austintexas.gov/department/recycling"
   },
   "Boston": {
     "R": "Recyclables include clean paper, cardboard, glass, metal cans, and plastics #1, #2, #5. No plastic bags or greasy containers.",
-    "O": "Curbside composting is expanding. Otherwise, organic waste should be bagged and put in trash."
+    "O": "Curbside composting is expanding. Otherwise, organic waste should be bagged and put in trash.",
+    "url": "https://www.boston.gov/departments/public-works/trash-and-recycling-guide"
   },
   "Philadelphia": {
     "R": "Recycle clean paper, cardboard, plastic bottles, metal cans, and glass jars. Do not bag recyclables or include food waste.",
-    "O": "Composting is not yet citywide. Food waste should go in the trash unless using private compost services."
+    "O": "Composting is not yet citywide. Food waste should go in the trash unless using private compost services.",
+    "url": "https://www.phila.gov/services/trash-recycling-city-upkeep/recycling/"
   },
   "Houston": {
     "R": "Recycle clean bottles, cans, paper, and cardboard in the green bin. Plastic bags and Styrofoam are not accepted.",
-    "O": "Composting is not citywide. Organic waste should be disposed of in the trash unless using private compost services."
+    "O": "Composting is not citywide. Organic waste should be disposed of in the trash unless using private compost services.",
+    "url": "https://www.houstontx.gov/solidwaste/recycling.html"
   },
   "Denver": {
-    "R": "Blue cart: clean paper, cardboard, glass, cans, and plastic containers #1–7. No plastic bags or food waste.",
-    "O": "Green compost cart: food scraps, yard waste, and compostable paper products. Composting is voluntary but widely used."
+    "R": "Blue cart: clean paper, cardboard, glass, cans, and plastic containers #1\u20137. No plastic bags or food waste.",
+    "O": "Green compost cart: food scraps, yard waste, and compostable paper products. Composting is voluntary but widely used.",
+    "url": "https://denvergov.org/Government/Departments/Recycle-Compost-Trash"
   },
   "Miami": {
     "R": "Recyclables include plastic bottles, metal cans, glass, cardboard, and paper. No plastic bags or contaminated items.",
-    "O": "Composting is not provided citywide. Food waste should be placed in the trash unless composting privately."
+    "O": "Composting is not provided citywide. Food waste should be placed in the trash unless composting privately.",
+    "url": "https://www.miamigov.com/Services/Garbage-Recycling"
   },
   "Portland": {
     "R": "Recycle paper, cardboard, plastic containers, glass, and metal. No plastic bags or lids.",
-    "O": "Use the green bin for all food waste, soiled paper, and yard debris. Composting is mandatory for single-family homes."
+    "O": "Use the green bin for all food waste, soiled paper, and yard debris. Composting is mandatory for single-family homes.",
+    "url": "https://www.portland.gov/bps/garbage-recycling"
   },
   "Washington D.C.": {
     "R": "Recycle paper, cardboard, metal cans, plastic bottles, and glass. Do not bag recyclables.",
-    "O": "Food waste can be composted via drop-off locations. A citywide curbside composting program is under development."
+    "O": "Food waste can be composted via drop-off locations. A citywide curbside composting program is under development.",
+    "url": "https://zerowaste.dc.gov/"
   },
   "Atlanta": {
     "R": "Recyclables include clean paper, plastic bottles, glass, and metal cans. No plastic bags or foam containers.",
-    "O": "Composting is available through private programs. Food waste should go in the trash unless composted privately."
+    "O": "Composting is available through private programs. Food waste should go in the trash unless composted privately.",
+    "url": "https://www.atlantaga.gov/government/departments/public-works/office-of-solid-waste-services/recycling-program"
   }
 }

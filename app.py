@@ -69,8 +69,14 @@ def get_recycling_tip(label, region="default"):
     return region_rules.get(label) or rules["default"].get(label, "No recycling advice available.")
 
 
-# Region dropdown
-region = st.selectbox("Select your region:", options=list(rules.keys()), index=0)
+# Region dropdown with search field
+city_input = st.text_input("Enter your city (e.g., New York, San Francisco):")
+region = city_input.strip()
+
+if region not in rules:
+    st.warning("⚠️ No specific guidance found for this city. Showing general advice instead.")
+    region = "default"
+
 
 # Upload UI
 uploaded_file = st.file_uploader("Choose an image of waste", type=["jpg", "jpeg", "png"])
@@ -81,6 +87,12 @@ if uploaded_file is not None:
 
     label, confidence = predict_image(img)
     tip = get_recycling_tip(label, region)
+    
+    # Show city-specific recycling link if available
+    city_url = rules.get(region, {}).get("url")
+    if city_url:
+        st.markdown(f"[🔗 Official recycling guide for {region}]({city_url})")
+
 
     # Convert short label to human-readable text
     label_display = "Recyclable" if label == "R" else "Organic Waste"
