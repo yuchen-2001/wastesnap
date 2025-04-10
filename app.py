@@ -35,7 +35,7 @@ output_details = interpreter.get_output_details()
 
 # Prediction function
 def predict_image(image):
-    image = image.resize((150, 150))  # Or match your model's expected size exactly
+    image = image.resize((224, 224))  # Or match your model's expected size exactly
     img_array = np.array(image) / 255.0
 
     # Ensure shape is [1, height, width, channels]
