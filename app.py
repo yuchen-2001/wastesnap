@@ -63,8 +63,11 @@ def predict_image(image):
 
 # Get tip for a region + label
 def get_recycling_tip(label, region="default"):
-    region_rules = rules.get(region, rules["default"])
-    return region_rules.get(label, "No guidance available.")
+    region_rules = rules.get(region)
+    if not region_rules:
+        region_rules = rules.get("default", {})
+    return region_rules.get(label) or rules["default"].get(label, "No recycling advice available.")
+
 
 # Region dropdown
 region = st.selectbox("Select your region:", options=list(rules.keys()), index=0)
