@@ -1,0 +1,20 @@
+{
+    "default": {
+      "plastic": "Check the number inside the recycling triangle. Clean plastics like bottles are generally recyclable.",
+      "paper": "Clean paper is recyclable. Food-soiled paper is not.",
+      "metal": "Recyclable if clean. Remove food residues.",
+      "glass": "Usually recyclable. Remove lids.",
+      "cardboard": "Flatten and clean before recycling.",
+      "trash": "This item is not recyclable."
+    },
+    "San Francisco": {
+      "plastic": "All rigid plastics are recyclable curbside.",
+      "trash": "Soft plastics go in the black bin."
+    },
+    "New York": {
+      "plastic": "Only plastics labeled 1, 2, or 5 are recyclable.",
+      "metal": "Metal cans and foil are accepted after rinsing.",
+      "glass": "Glass bottles and jars only. No mirrors or windows."
+    }
+  }
+  
