@@ -79,5 +79,9 @@ if uploaded_file is not None:
     label, confidence = predict_image(img)
     tip = get_recycling_tip(label, region)
 
-    st.markdown(f"### 🧾 Prediction: **{label.capitalize()}** ({confidence:.1%} confidence)")
+    # Convert short label to human-readable text
+    label_display = "Recyclable" if label == "R" else "Organic Waste"
+
+    st.markdown(f"### 🧾 Prediction: **{label_display}** ({confidence:.1%} confidence)")
     st.info(f"🧭 Recycling advice for **{region}**: {tip}")
+
