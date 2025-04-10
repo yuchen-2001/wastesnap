@@ -1,16 +1,22 @@
 {
   "default": {
-    "O": "This item is considered organic waste. Dispose in compost or green bin if available.",
-    "R": "This item is recyclable. Please clean and dry before disposal."
+    "R": "This item is recyclable. Ensure it is clean, dry, and free from food residue before placing it in the recycling bin.",
+    "O": "This item is organic waste. If your city offers compost collection, use the green bin. Otherwise, dispose of it in regular trash."
   },
   "New York": {
-    "O": "Organic waste is accepted in brown bins where composting is available.",
-    "R": "Recyclables must be clean. Place paper, plastic, and metal in the blue bin."
+    "R": "Place clean recyclables in the blue bin. Includes bottles, cans, rigid plastics, paper, and cardboard. No plastic bags, films, or styrofoam.",
+    "O": "Place organic waste in the brown bin if participating in the NYC compost program. Includes food scraps, plant waste, and soiled paper products."
   },
   "San Francisco": {
-    "O": "Place organic waste (food, yard scraps) in the green compost bin.",
-    "R": "Place clean recyclables in the blue bin. Do not include plastic bags or film."
+    "R": "Use the blue bin for recyclables: clean paper, cardboard, metal cans, glass bottles, and hard plastics. No plastic bags or utensils.",
+    "O": "San Francisco has mandatory composting. Place food scraps, napkins, and compostable packaging in the green bin."
+  },
+  "Chicago": {
+    "R": "Recyclables go in the blue cart. Accepted: paper, cardboard, glass jars, aluminum cans, and plastic bottles #1–5. No plastic bags or greasy pizza boxes.",
+    "O": "Composting is not provided citywide. Consider private composting services or dispose of organic waste in the black trash cart."
+  },
+  "Seattle": {
+    "R": "Recycle paper, cardboard, glass, plastic bottles, and metal cans. Rinse containers and keep materials loose (not in bags).",
+    "O": "Food waste and soiled paper go in the green yard/food cart. Composting is mandatory for single-family homes and apartments."
   }
 }
-
-  

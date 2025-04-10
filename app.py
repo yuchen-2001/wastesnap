@@ -84,4 +84,21 @@ if uploaded_file is not None:
 
     st.markdown(f"### 🧾 Prediction: **{label_display}** ({confidence:.1%} confidence)")
     st.info(f"🧭 Recycling advice for **{region}**: {tip}")
+    # Optional expandable tip
+    with st.expander("📚 Learn more about recycling guidelines"):
+        if label == "R":
+            st.markdown("""
+            - ♻️ **Rinse containers** before recycling
+            - 🧻 **No greasy paper/cardboard** in recycling
+            - 🗞️ **Flatten boxes** to save space
+            - ❌ **Avoid plastic bags** in curbside bins
+            """)
+        else:
+            st.markdown("""
+            - 🥬 **Compost food scraps** if possible
+            - 🧻 **Soiled napkins and paper towels** go in compost
+            - 🚫 **No plastics** in organic bins
+            - 🌎 **Check local programs** for community compost drop-offs
+            """)
+
 
