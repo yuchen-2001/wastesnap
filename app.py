@@ -77,12 +77,12 @@ region = st.selectbox("Select your region:", options=list(rules.keys()), index=0
 
 
 # Try an example image section
-st.markdown("## 🖼️ Try an Example Image")
+st.markdown("### Try an Example Image")
 
 # available examples
 example_images = {
-    "Spoiled Banana": "examples/banana.jpg",
-    "Plastic Bottles": "examples/plastics.jpg",
+    "Strawberry": "examples/strawberry.jpg",
+    "Plastic Bottle": "examples/plasticbottle.jpg",
     "Carrots": "examples/carrots.jpg",
     "Curtain": "examples/curtain.jpg"
 }
@@ -99,7 +99,7 @@ for idx, (label, path) in enumerate(example_images.items()):
 
 
 # Upload UI
-uploaded_file = st.file_uploader("Choose an image of waste", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("### Choose an image of waste", type=["jpg", "jpeg", "png"])
 
 if uploaded_file is not None or selected_example is not None:
     if uploaded_file:
