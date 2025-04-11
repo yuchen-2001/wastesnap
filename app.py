@@ -6,7 +6,7 @@ from PIL import Image
 import tensorflow as tf
 import json
 import os
-
+from PIL import UnidentifiedImageError
 
 # Set up the Streamlit page
 st.set_page_config(page_title="WasteSnap", layout="centered")
@@ -100,16 +100,35 @@ for idx, (label, path) in enumerate(example_images.items()):
 
 
 # Upload UI
-uploaded_file = st.file_uploader("### Choose an image of waste", type=["jpg", "jpeg", "png"])
+accepted_types = ["jpg", "jpeg", "png", "webp"]
+uploaded_file = st.file_uploader("### Choose an image of waste", type=accepted_types)
 
 if uploaded_file is not None or selected_example is not None:
+    
     if uploaded_file:
-        img = Image.open(uploaded_file)
+        filename = uploaded_file.name.lower()
+
+        if filename.endswith(".heic"):
+            st.error("❌ HEIC images are not supported on this platform. Please upload a jpg, png, or webp image.")
+            st.stop()
+
+        if not any(filename.endswith(ext) for ext in accepted_types):
+            st.error("❌ Unsupported file format. Please upload an image of type jpg, jpeg, png, or webp.")
+            st.stop()
+
+        try:
+            img = Image.open(uploaded_file).convert("RGB")
+        except UnidentifiedImageError:
+            st.error("❌ Failed to read the image. Please try a different file.")
+            st.stop()
+
         st.image(img, caption="Uploaded Image", use_container_width=True)
+
     else:
-        img = Image.open(selected_example)
+        img = Image.open(selected_example).convert("RGB")
         st.image(img, caption=f"Example: {os.path.basename(selected_example)}", use_container_width=True)
 
+    
     label, confidence = predict_image(img)
     tip = get_recycling_tip(label, region)
 
