@@ -6,9 +6,7 @@ from PIL import Image
 import tensorflow as tf
 import json
 import os
-import datetime
-import uuid
-import os
+
 
 # Set up the Streamlit page
 st.set_page_config(page_title="WasteSnap", layout="centered")
@@ -119,54 +117,6 @@ if uploaded_file is not None or selected_example is not None:
     st.markdown(f"### 🧾 Prediction: **{label_display}** ({confidence:.1%} confidence)")
     st.info(f"🧭 Recycling advice for **{region}**: {tip}")
 
-    # Feedback section
-    st.markdown("### 🙋 Was this prediction helpful?")
-    col1, col2 = st.columns([1, 1])
-
-    feedback_path = "feedback.json"  # or use full path if needed
-
-    if col1.button("👍 Yes"):
-        feedback = {
-            "id": str(uuid.uuid4()),
-            "timestamp": datetime.datetime.now().isoformat(),
-            "label": label,
-            "region": region,
-            "confidence": confidence,
-            "feedback": "positive"
-        }
-        if os.path.exists(feedback_path):
-            with open(feedback_path, "r") as f:
-                logs = json.load(f)
-        else:
-            logs = []
-
-        logs.append(feedback)
-        with open(feedback_path, "w") as f:
-            json.dump(logs, f, indent=2)
-        st.success("✅ Thanks for your feedback!")
-
-    if col2.button("👎 No"):
-        feedback = {
-            "id": str(uuid.uuid4()),
-            "timestamp": datetime.datetime.now().isoformat(),
-            "label": label,
-            "region": region,
-            "confidence": confidence,
-            "feedback": "negative"
-        }
-        if os.path.exists(feedback_path):
-            with open(feedback_path, "r") as f:
-                logs = json.load(f)
-        else:
-            logs = []
-
-        logs.append(feedback)
-        with open(feedback_path, "w") as f:
-            json.dump(logs, f, indent=2)
-        st.warning("Thanks — we'll use this to improve!")
-
-
-
     city_url = rules.get(region, {}).get("url")
     if city_url:
         st.markdown(f"[🔗 Official recycling guide for {region}]({city_url})")
@@ -188,5 +138,13 @@ if uploaded_file is not None or selected_example is not None:
             - 🌎 **Check local programs** for community compost drop-offs
             """)
 
+st.markdown("---")
+st.markdown(
+    '<div style="text-align: center; font-size: 0.85em;">'
+    'Powered by a model trained from '
+    '<a href="https://www.kaggle.com/code/beyzanks/waste-classification-with-cnn" target="_blank">this Kaggle notebook by beyzanks</a>.'
+    '</div>',
+    unsafe_allow_html=True
+)
 
 
