@@ -5,6 +5,8 @@ import numpy as np
 from PIL import Image
 import tensorflow as tf
 import json
+import os
+
 
 # Set up the Streamlit page
 st.set_page_config(page_title="WasteSnap", layout="centered")
