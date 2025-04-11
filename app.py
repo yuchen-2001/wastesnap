@@ -38,6 +38,7 @@ output_details = interpreter.get_output_details()
 
 # Prediction function
 def predict_image(image):
+    image = image.convert("RGB") # ensure 3 channels
     image = image.resize((224, 224))  # Or match your model's expected size exactly
     img_array = np.array(image) / 255.0
 
