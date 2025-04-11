@@ -93,7 +93,7 @@ selected_example = None
 
 for idx, (label, path) in enumerate(example_images.items()):
     with cols[idx]:
-        st.image(path, caption=label, use_column_width=True)
+        st.image(path, caption=label, use_container_width=True)
         if st.button(f"Try {label}"):
             selected_example = path
 
@@ -104,10 +104,10 @@ uploaded_file = st.file_uploader("Choose an image of waste", type=["jpg", "jpeg"
 if uploaded_file is not None or selected_example is not None:
     if uploaded_file:
         img = Image.open(uploaded_file)
-        st.image(img, caption="Uploaded Image", use_column_width=True)
+        st.image(img, caption="Uploaded Image", use_container_width=True)
     else:
         img = Image.open(selected_example)
-        st.image(img, caption=f"Example: {os.path.basename(selected_example)}", use_column_width=True)
+        st.image(img, caption=f"Example: {os.path.basename(selected_example)}", use_container_width=True)
 
     label, confidence = predict_image(img)
     tip = get_recycling_tip(label, region)
