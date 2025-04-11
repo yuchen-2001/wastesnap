@@ -72,5 +72,10 @@
     "R": "Recyclables include clean paper, plastic bottles, glass, and metal cans. No plastic bags or foam containers.",
     "O": "Composting is available through private programs. Food waste should go in the trash unless composted privately.",
     "url": "https://www.atlantaga.gov/government/departments/public-works/office-of-solid-waste-services/recycling-program"
+  },
+  "Pennsylvania": {
+    "R": "Recyclables in most Pennsylvania municipalities include clean plastic bottles (#1 and #2), paper, cardboard, metal cans, and glass containers. Check with your local authority for accepted materials.",
+    "O": "Organic waste recycling is limited. Residents are encouraged to compost food and yard waste at home or use private services where available.",
+    "url": "https://www.dep.pa.gov/Business/Land/Waste/Recycling/Municipal-Resources/Pages/default.aspx"
   }
 }

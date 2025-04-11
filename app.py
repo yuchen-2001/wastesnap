@@ -73,28 +73,52 @@ def get_recycling_tip(label, region="default"):
 region = st.selectbox("Select your region:", options=list(rules.keys()), index=0)
 
 
+
+# Try an example image section
+st.markdown("## 🖼️ Try an Example Image")
+
+# available examples
+example_images = {
+    "Spoiled Banana": "examples/banana.jpg",
+    "Plastic Bottles": "examples/plastics.jpg",
+    "Carrots": "examples/carrots.jpg",
+    "Curtain": "examples/curtain.jpg"
+}
+
+cols = st.columns(len(example_images))
+
+selected_example = None
+
+for idx, (label, path) in enumerate(example_images.items()):
+    with cols[idx]:
+        st.image(path, caption=label, use_column_width=True)
+        if st.button(f"Try {label}"):
+            selected_example = path
+
+
 # Upload UI
 uploaded_file = st.file_uploader("Choose an image of waste", type=["jpg", "jpeg", "png"])
 
-if uploaded_file is not None:
-    img = Image.open(uploaded_file)
-    st.image(img, caption="Uploaded Image", use_column_width=True)
+if uploaded_file is not None or selected_example is not None:
+    if uploaded_file:
+        img = Image.open(uploaded_file)
+        st.image(img, caption="Uploaded Image", use_column_width=True)
+    else:
+        img = Image.open(selected_example)
+        st.image(img, caption=f"Example: {os.path.basename(selected_example)}", use_column_width=True)
 
     label, confidence = predict_image(img)
     tip = get_recycling_tip(label, region)
 
-    # Show city-specific recycling link if available
+    label_display = "Recyclable" if label == "R" else "Organic Waste"
+    st.markdown(f"### 🧾 Prediction: **{label_display}** ({confidence:.1%} confidence)")
+    st.info(f"🧭 Recycling advice for **{region}**: {tip}")
+
     city_url = rules.get(region, {}).get("url")
     if city_url:
         st.markdown(f"[🔗 Official recycling guide for {region}]({city_url})")
 
-
-    # Convert short label to human-readable text
-    label_display = "Recyclable" if label == "R" else "Organic Waste"
-
-    st.markdown(f"### 🧾 Prediction: **{label_display}** ({confidence:.1%} confidence)")
-    st.info(f"🧭 Recycling advice for **{region}**: {tip}")
-    # Optional expandable tip
+    # Optional tips
     with st.expander("📚 Learn more about recycling guidelines"):
         if label == "R":
             st.markdown("""
@@ -110,5 +134,6 @@ if uploaded_file is not None:
             - 🚫 **No plastics** in organic bins
             - 🌎 **Check local programs** for community compost drop-offs
             """)
+
 
 
